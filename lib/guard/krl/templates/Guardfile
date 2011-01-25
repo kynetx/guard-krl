@@ -1,0 +1,3 @@
+guard 'krl' do
+  watch(/.*\.krl$/)
+end
