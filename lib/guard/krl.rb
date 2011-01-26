@@ -31,7 +31,10 @@ module Guard
       paths.each do |file|
         unless File.basename(file)[0] == "_"
           UI.info "Running commit for #{file}..."
-          UI.info `krl commit`
+          commit_result = `krl commit`
+          UI.info commit_result
+          icon = commit_result.match("Committed Version") ? :success : :failed
+          Notifier.notify commit_result, :title => "KRL Watcher", :image => icon
         end
       end
     end
