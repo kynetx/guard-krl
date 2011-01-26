@@ -31,7 +31,7 @@ module Guard
       paths.each do |file|
         unless File.basename(file)[0] == "_"
           UI.info "Running commit for #{file}..."
-          `krl commit`
+          UI.info `krl commit`
         end
       end
     end
