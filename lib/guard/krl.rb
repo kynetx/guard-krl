@@ -33,7 +33,7 @@ module Guard
           UI.info "Running commit for #{file}..."
           commit_result = `krl commit`
           UI.info commit_result
-          icon = commit_result.match("Committed Version") ? :success : :failed
+          icon = commit_result.match(/Committed version: \d+/) ? :success : :failed
           Notifier.notify commit_result, :title => "KRL Watcher", :image => icon
         end
       end
