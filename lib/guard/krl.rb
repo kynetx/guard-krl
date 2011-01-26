@@ -2,7 +2,7 @@ require 'guard'
 require 'guard/guard'
 
 module Guard
-  class Less < Guard
+  class Krl < Guard
 
     # ================
     # = Guard method =
