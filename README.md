@@ -19,6 +19,13 @@ Add an initial setup to your Guardfile with:
 
 Please read [Guard usage doc](https://github.com/guard/guard#readme).
 
+In short (after installing the gem):
+    
+    $ cd /path/to/a00x000.krl
+    $ guard init krl
+    $ guard
+
+
 ## Guardfile
 
     guard 'krl' do
