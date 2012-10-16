@@ -30,8 +30,9 @@ module Guard
     def run_on_change(paths)
       paths.each do |file|
         unless File.basename(file)[0] == "_"
+          path = File.dirname(file)
           UI.info "Running commit for #{file}..."
-          commit_result = `krl commit`
+          commit_result = `cd #{path}; krl commit`
           UI.info commit_result
           icon = commit_result.match(/Committed version: \d+/) ? :success : :failed
           Notifier.notify commit_result, :title => "KRL Watcher", :image => icon
